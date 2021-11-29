@@ -1,0 +1,41 @@
+# basic packages
+numpy
+scipy
+tqdm
+xarray
+
+# requests
+pandas
+
+# test
+pytest
+
+# figure, graph
+matplotlib
+seaborn
+
+# jupyter
+jupyterlab
+
+# ML
+scikit-learn
+
+# optimization
+optuna
+
+# log
+mlflow
+hydra-core
+hydra_colorlog
+hydra-optuna-sweeper
+wandb
+neptune-client
+
+# others
+rich
+
+# feature
+git+https://github.com/pfnet-research/xfeat.git
+
+# for MinIO
+boto3

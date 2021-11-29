@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  torch:
+    container_name: torch_with_ml_libs_rocm42
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: torch_with_ml_libs_rocm42:latest
+    tty: true
+    command: /bin/bash
+    devices:
+      - "/dev/kfd"
+      - "/dev/dri"
+    volumes:
+      - .:/src
+    ports:
+      - "8888:8888"
+    shm_size: '16gb'
+    group_add:
+      - video
+    environment:
+      - NB_USER=user
+      - CHOWN_HOME=yes
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTERLAB_S3_ENDPOINT=http://s3:9000
+      - JUPYTERLAB_S3_ACCESS_KEY_ID=xxxxx
+      - JUPYTERLAB_S3_SECRET_ACCESS_KEY=xxxxx
+      - JUPYTER_TOKEN=xxxxx

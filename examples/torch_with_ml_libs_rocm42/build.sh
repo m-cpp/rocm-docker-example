@@ -1,0 +1,1 @@
+sudo docker build -t torch_with_ml_libs_rocm42 .
